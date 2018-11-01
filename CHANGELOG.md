@@ -1,103 +1,249 @@
-## v2.1.7
-- fix(pug): crossplatform use `path.sep` instead of `/` - thanks @vasilevich
-- update: `@coreui/coreui` to `2.0.21`
-  - feat(sidebar): mobile clickout behaviour
-  - fix(layout): sidebar on mobile issue [#23](https://github.com/coreui/coreui-angular/issues/23)
-  - fix: sidebar, sidebar-minimizer `rtl` ie issues, tweaks
-  - refactor(sidebar.js): ps minor cleanup
-- update: `flag-icon-css` to `3.2.1`
-- update: `autoprefixer` to `9.3.1`
-- update: `js-beautify` to `1.8.8`
-- update: `postcss-cli` to `6.0.1`
-- update: `stylelint-scss` to `3.3.2`
+## [CoreUI](https://coreui.io/) for [react](./REACT.md) changelog
 
-## v2.1.6
-- fix(cards): smooth collapse card - thanks @MartijnBastiaansen #378
-- fix(header): migrate `.divider` to `.dropdown-divider` - thanks @vanam #406
-- chore: build/change-version cleanup
-- docs(readme): fix broken hyperlinks to 6 versions
-- update: `@coreui/coreui` to `2.0.19`
-  - fix: `transparent` is not a valid rgb color ie issue
-  - fix(card): rtl for card-header icon margins
-  - fix(sidebar): rtl for sidebar-minimizer icon
-  - fix(breadcrumb): rtl padding
-  - fix(card): rtl float for card-header-actions
-  - fix(sidebar): rtl ps scrollbar issue temp fix/refactor
-  - feat(sidebar) badge margins for nav-dropdown-toggle
-  - fix(scss): add missing light-blue color variable
-- update: `chart.js` to `2.7.3`
-- update: `core-js` to `2.5.7`
-- update: `autoprefixer` to `9.2.0`
-- update: `browser-sync` to `2.26.3`
-- update: `eslint` to `5.7.0`
-- update: `eslint-plugin-compat` to `2.6.2`
-- update: `js-beautify` to `1.8.7`
-- update: `node-sass` to `4.9.4`
+##### `v2.0.13` 
+- refactor: migration to [Create React App 2.0](https://reactjs.org/blog/2018/10/01/create-react-app-v2.html) cleanup 
+  - cleanup `package.json` scripts
+  - remove `babel-jest` dependency
+  - remove `node-sass-chokidar` dependency
+  - remove `npm-run-all` dependency
+  - move `App.js` import styles to `App.scss` 
+  - replace imports from `node_modules/` with `~` prefix
+- chore: remove unused `src/scss/vendors/charts.js/` directory
+- chore: update `@coreui/coreui` to `^2.0.15`
+- chore: update `@coreui/react` to `^2.0.9`
 
-## v2.1.5
-- update: `@coreui/coreui` to `2.0.12` 
-   - fix(layout) aside IE issue with .main margin on mobile
-   - fix(sidebar) rtl IE issue with sidebar-minimized captions
-   - fix(sidebar) rtl ps scrollbar issue temp fix
-- update: `@babel/cli` to `7.1.2`
-- update: `@babel/core` to `7.1.2`
-- update: `eslint to `5.6.1`
-- update: `foreach-cli` to `1.8.1`
- 
-## v2.1.4
-- feat(basic-forms): add missing `date-input` 
-- update: `@coreui/coreui` to `2.0.11` fixes some IE11 and `rtl` issues
-- chore: update `babel-eslint` to `10.0.1`
-- chore: update `stylelint` to `9.6.0`
+##### `v2.0.12` 
+fixes some issues with `rtl`, `ie11`, `sidebar-minimized` behaviour and `aside` responsiveness
+- fix(DefaultAside): `ListGroup` with `tag="div"` works better with `rtl` 
+- fix(DefaultLayout): `AppAside` remove deprecated `hidden` prop 
+- chore: update `@coreui/react` to `^2.0.8`
+- chore: update `reactsrtrap` to `^6.5.0`
+- chore: update `react-scripts` to `^2.0.4`
+- chore: `enzyme` to `3.7.0`
+- chore: `enzyme-adapter-react-16` to `1.6.0`
+  
+##### `v2.0.11`
+- chore: update `@coreui/react` to `^2.0.7`
+- chore: migration to [Create React App 2.0](https://reactjs.org/blog/2018/10/01/create-react-app-v2.html)
+  - chore: update `react-scripts` to `^2.0.3`
+  - chore: update `node-sass-chokidar` to `^1.3.3`
+  - chore: add `node-sass v4.9.3`
+  - chore: add `react-app-polyfill v0.1.3` 
+  - chore: add `eslintConfig` in `package.json` 
+  - chore: add `browserslist` in `package.json` 
+  - chore: update `manifest.json`
+  - refactor(index.js): add `react-app-polyfill` for `ie9-11` support
+  - refactor(index.js): migration to `serviceWorker.js`
 
-## v2.1.3
-- fix(sidebar.pug): split icons/flags `li.nav-item`
-- update: `@coreui/coreui` to `2.0.9`
-- update: `flag-icon-css` to `3.2.0`
-- update: `@babel/cli` to `7.1.0`
-- update: `@babel/core` to `7.1.0`
-- update: `@babel/preset-env` to `7.1.0`
-- update: `eslint` to `5.6.0`
-- update: `js-beautify` to `1.8.6`
-- update: `stylelint-scss` to `3.3.1`
+###### Migrating from CRA 1.x to 2.x:
+affected files: 
+- `package.json` -> dependencies update  
+- `src/index.js` -> move to `serviceWorker`, add `react-app-polyfill` for `ie9-11` support when needed
 
-## v2.1.2
-- Update: `@coreui/coreui` to `2.0.6`
-- Update: `bootstrap` to `4.1.3`
-- Update: `popper.js` to `1.14.4`
-- Update: `@babel/cli` to `^7.0.0`
-- Update: `@babel/core` to `^7.0.0`
-- Update: `@babel/plugin-proposal-object-rest-spread` to `^7.0.0`
-- Update: `@babel/preset-env` to `^7.0.0`
-- Update: `autoprefixer` to `^9.1.5`
-- Update: `babel-eslint` to `^9.0.0`
-- Update: `browser-sync` to `^2.24.7`
-- Update: `clean-css-cli` to `^4.2.1`
-- Update: `copyfiles` to `^2.1.0`
-- Update: `cross-env` to `^5.2.0`
-- Update: `eslint` to `^5.5.0`
-- Update: `eslint-plugin-compat` to `^2.5.1`
-- Update: `node-sass` to `^4.9.3`
-- Update: `nodemon` to `^1.18.4`
-- Update: `postcss-cli` to `^6.0.0`
-- Update: `shelljs` to `^0.8.2`
-- Update: `stylelint` to `^9.5.0`
-- Update: `stylelint-order` to `^1.0.0`
-- Update: `stylelint-scss` to `^3.3.0`
+In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebook/create-react-app/blob/master/CHANGELOG.md#migrating-from-1x-to-203) for potential breaking changes.  
 
-## v2.1.1
-- Update: @coreui/coreui to 2.0.3
-- Update: @babel/cli to 7.0.0-beta.53
-- Update: @babel/core to 7.0.0-beta.53
-- Update: @babel/plugin-proposal-object-rest-spread to 7.0.0-beta.53
-- Update: @babel/preset-env to 7.0.0-beta.53
-- Update: babel-eslint to 8.2.6
-- Update: bootstrap to 4.1.2
-- Update: eslint-plugin-compat to 2.5.0
-- Update: nodemon to 1.18.1                                     
+---
 
-## v2.1.0
-- **Feat: Add pug support**
-- Update: @coreui/coreui-icons to 0.3.0
-- Update: @coreui/coreui to 2.0.3
-- Update: perfect-scrollbar to 1.4.0
+##### `v2.0.10`
+- chore: update `@coreui/coreui` to `^2.0.14`
+- chore: update `@coreui/react` to `^2.0.6`
+- chore: update `enzyme` to `^3.6.0`
+- chore: update `enzyme-adapter-react-16` to `^1.5.0`
+- chore: update `flag-icon-css` to `^3.2.0`
+- chore: update `react` to `^16.5.2`
+- chore: update `react-dom` to `^16.5.2`
+- chore: update `react-router-config` to `^4.4.0-beta.1`
+- chore: update `react-test-renderer` to `^16.5.2`
+- chore: update `babel-jest` to `^23.6.0`
+
+##### `v2.0.9`
+- chore: update `@coreui/icons` to `0.3.0`
+- refactor(CoreUIIcons): move to `@coreui/icons v0.3.0`
+- chore: update `enzyme` to `3.5.0`
+- chore: update `enzyme-adapter-react-16` to `1.3.1`
+- chore: update `react-loadable` to `5.5.0`
+- chore: update `reactstrap` to `6.4.0`
+- chore: update `react-scripts` to `1.1.5`
+
+##### `v2.0.8`
+- fix(User): add missing unique key prop
+- fix(Login): add missing form and autoComplete
+- fix(Register): add missing form and autoComplete
+- chore: update `@coreui/react` to `2.0.5`
+- chore: update `bootstrap` to `4.1.3`
+- chore: update `reactstrap` to `6.3.1`
+- chore: update `babel-jest` to `23.4.2`
+
+##### `v2.0.5`
+- feat(router): Users/User Breadcrumb example with `/users/:id`
+- chore: update `@coreui/react` to `2.0.4`,
+- chore: update `prop-types` to `15.6.2`
+- chore: update `react` to `16.4.1`
+- chore: update `react-dom` to `16.4.1`
+- chore: update `react-test-renderer` to `16.4.1`
+- chore: update `npm-run-all` to `4.1.3`
+- chore: add `.env` file
+
+##### `v2.0.4`
+- feat(Forms): FormFeedback valid, toggleFade
+- refactor(Cards): toggleFade
+- chore: update `@coreui/coreui` to `2.0.2`,
+- chore: update `@coreui/react` to `2.0.1`,
+- chore: update `classnames` to `2.2.6`,
+- chore: update `core-js` to `2.5.7`,
+- chore: update `react` to `16.4.0`,
+- chore: update `react-dom` to `16.4.0`,
+- chore: update `react-router-dom` to `4.3.1`,
+- chore: update `react-test-renderer` to `16.4.0`,
+- chore: update `reactstrap` to `6.1.0`,
+- chore: update `babel-jest` to `23.0.1`,
+
+##### `v2.0.3`
+- refactor: disable `ServiceWorker` by default
+- fix(routes): mismatched `SimpleLineIcons` dynamic import
+- refactor: CoreUI Icons `v0.2.0`
+- chore: update`babel-jest` to `v22.4.4`
+
+##### `v2.0.2`
+- chore: update `@coreui/react` to `v2.0.0`,
+
+##### `v2.0.1`
+- refactor: code splitting via dynamic import
+- refactor: switches view rearrange
+- fix: update component names in package.json
+- chore: update `node-sass-chokidar` to `v1.3.0`
+- chore(release): dependencies update
+
+##### `v2.0.0-rc.1`
+- feat: new CoreUI Icons set
+
+##### `v2.0.0-beta.2`
+- feat: CoreUI custom tooltips plugin for chart.js 
+
+##### `v2.0.0-beta.1`
+- refactor(Switches): move to AppSwitch component
+- fix: typo
+
+##### `v2.0.0-beta`
+- update to `@coreui/react: ^2.0.0-beta`
+
+##### `v2.0.0-alpha.3`
+- refactor(Colors): view layout, minor temp tweaks
+- refactor(FullAside): - ListGroup (deprecate callout)
+- refactor(Full*): containers minor fixes
+- refactor(Dropdowns): minor fixes
+- refactor(Forms): `card-header-actions`
+- feat(Forms): `<Input type="date">`
+- feat(Forms): `FormFeedback`
+- feat(Collapses): Accordion, Custom Accordion 
+- feat(ListGroup): with TabPanes
+- refactor(PaginationItem): `tag="button"`
+- refactor(BrandButtons): spacing
+- refactor:(Buttons): view layout
+
+##### `v2.0.0-alpha.2`
+- refactor: FullHeader `<AppHeaderDropdown direction="down">` (required prop `direction`)
+- refactor: ButtonDropdowns `<Dropdown direction="up">` (deprecate 'dropup')
+- refactor: Dashboard legend badge pill
+- refactor: SocialButtons to BrandButtons `btn-brand`
+- refactor: Buttons spacing `mr-1`
+- update: reactstrap to `5.0.0`
+- update: react, react-dom to `16.3.1`
+- update: node-sass-chokidar to `1.1.0`
+- update: prop-types to `15.5.8`
+- update: react-scripts to `1.1.4`
+
+##### `v2.0.0-alpha.1`
+- refactor: separation of concerns - (CoreUI template vs CoreUI components) prepare to use CoreUI as dependency
+- refactor: project structure change
+- refactor: moved to [Create-React-App](CRA.md)
+- chore: moved to [Semantic Versioning](https://semver.org/)
+
+##### `v1.0.10`
+- refactor: `<InputGroupAddon addonType="prepend">`
+- refactor: `<InputGroupAddon addonType="append">`
+- refactor: `<InputGroupText>`
+- refactor: remove `<InputGroupButton>`
+- update: reactstrap to `5.0.0-beta`
+- update: dependencies
+
+###### `v1.0.9`
+- refactor: Sidebar structure change
+
+###### `v1.0.8`
+- refactor: Dashboard radio buttons, new `onRadioBtnClick()` method
+- update: react to `16.2.0`
+- update: Bootstrap `4.0.0-beta.3`
+- update: dependencies
+- feature: some Bootstrap4 components added
+- fix: rollback to webpack-dev-server `2.9.7`
+- temp tweaks(b4 beta3): `InputGroupAddon` and `InputGroupButton` 
+- refactor(checkboxes, radios): temp tweaks 
+- feat: mobile sidebar link click closes the sidebar
+- fix: .nav-tabs .nav-link `cursor: pointer`
+
+###### `v1.0.6`
+
+- update: react to `^16.1.1`
+- update: reactstrap to `^5.0.0-alpha.4`
+- refactor: deprecated reactstrap `NavDropdown` change to `Dropdown` with `nav` prop
+- refactor: use prop `bsSize` instead of the `size` to bootstrap's input sizing
+- update: dependencies
+
+###### `v1.0.5`
+- feature: Sidebar add divider.class
+- refactor: Sidebar
+- moved to react: `^16.1.0`
+- chore: dependencies update
+
+###### `v1.0.4`
+- refactor: scss
+
+###### `v1.0.3`
+- update: bootstrap to `4.0.0-beta.2`
+
+###### `v1.0.2`
+- `HeaderDropdown` component example extracted out of `Header`
+
+###### `v1.0.1`
+- moved to react: `^16.0.0`
+- moved to reactstrap: `^5.0.0-alpha.3`
+- moved to react-text-mask-hoc: `^0.10.4`
+- moved from deprecated CardBlock to `CardBody` reactstrap component
+- moved to `NavDropdown` in `Header` component
+- fix for app-header navbar-nav dropdown-menu-right
+- fix typo in Tables component PaginationItem
+
+###### `v1.0.0`
+- Sidebar component:
+	- item with optional class (_nav.js)
+	- nav link with optional variant (_nav.js)
+	- external urls allowed (_nav.js)
+	- optional SidebarFooter, SidebarHeader, SidebarForm components
+- SidebarMinimizer component
+- .brand-minimized
+- .sidebar-minimized,
+- Header component - sidebarMinimize
+- react-transition-group downgrade to v1 : (modals and alerts reactstrap:v4.8 issue)
+
+###### `2017.08.24`
+- webpack.config env.prod
+- Dashboard .dropdown-menu-right temp.scss hotfix (full)
+- callout.scss .chart-wrapper hotfix (full)
+
+###### `2017.08.11`
+- Bootstrap 4 beta
+- Dashboard component (full):
+	- line chart for social box
+	- sparkline chart for callout
+
+###### `2017.08.01`
+- Sidebar component: 
+	- title item with optional wrapper and class (_nav.js)
+	- nav link item with optional badge
+	- code refactoring
+
+###### `2017.07.31`
+- moved to [reactstrap](https://reactstrap.github.io/)
+- moved to [webpack](https://webpack.js.org/) (dropping gulp)
+- data driven Sidebar component (_nav.js)
